@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 namespace CSharpIntermediate.Classes
 {
 
-    public class Customer
+    public class CustomerInClasses
     {
         public int Id;
         public string Name;
         public readonly List<Order> Orders = new List<Order>();
 
-        public Customer(int id)
+        public CustomerInClasses(int id)
         {
             this.Id = id;
         }
 
-        public Customer(int id, string name)
+        public CustomerInClasses(int id, string name)
             : this(id)
         {
             this.Name = name;

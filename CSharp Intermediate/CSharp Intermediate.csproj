@@ -8,4 +8,12 @@
     <RootNamespace>CSharpIntermediate</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Inheritance\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Amazon\Amazon.csproj" />
+  </ItemGroup>
+
 </Project>

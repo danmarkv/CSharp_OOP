@@ -2,8 +2,10 @@
 using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using Amazon;
 using CSharpIntermediate.Associate_Between_Classes;
 using CSharpIntermediate.Associate_Between_Classes.Composition;
+using CSharpIntermediate.Classes;
 using CSharpIntermediate.Classes_Exercises;
 
 
@@ -16,13 +18,9 @@ namespace CSharpIntermediate
         
         static void Main()
         {
-            var dbMigrator = new DbMigrator(new Logger());
+            var customer = new Customer();
+            Amazon.RateCalculator calculator = new RateCalculator();
 
-            var logger = new Logger();
-            var installer = new Installer(logger);
-
-            dbMigrator.Migrate();
-            installer.Install();
         }
     }
 }
