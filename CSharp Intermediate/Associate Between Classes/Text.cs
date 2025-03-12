@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpIntermediate.Associate_Between_Classes
 {
-    class Text : PresentationObject
+    class TextABC : PresentationObject
     {
         public int FontSize { get; set; }
         public string FontName { get; set; }

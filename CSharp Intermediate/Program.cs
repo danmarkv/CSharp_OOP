@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
@@ -12,13 +13,16 @@ using CSharpIntermediate.Inheritance;
 
 namespace CSharpIntermediate
 {
-    
     class Program
     {
         
         static void Main()
         {
-            var car = new Car("ABC4567");
+            Text text = new Text();
+            Shape shape = text; // upcasting
+
+            Text newText = (Text)shape; // downcasting
+            
         }
     }
 }
