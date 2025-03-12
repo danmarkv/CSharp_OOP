@@ -7,20 +7,18 @@ using CSharpIntermediate.Associate_Between_Classes;
 using CSharpIntermediate.Associate_Between_Classes.Composition;
 using CSharpIntermediate.Classes;
 using CSharpIntermediate.Classes_Exercises;
+using CSharpIntermediate.Inheritance;
 
 
 namespace CSharpIntermediate
 {
-    
     
     class Program
     {
         
         static void Main()
         {
-            var customer = new Customer();
-            Amazon.RateCalculator calculator = new RateCalculator();
-
+            var car = new Car("ABC4567");
         }
     }
 }
