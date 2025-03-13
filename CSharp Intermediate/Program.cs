@@ -10,17 +10,24 @@ using CSharpIntermediate.Classes;
 using CSharpIntermediate.Classes_Exercises;
 using CSharpIntermediate.Inheritance;
 using CSharpIntermediate.Polymorphism;
+using CSharpIntermediate.Polymorphism.Exercises;
 
 
 namespace CSharpIntermediate
 {
     class Program
     {
-        
+
         static void Main()
         {
-            var rectangle = new Rectangle_Abstract();
-            rectangle.Draw();
+            var sql = new SqlConnection();
+            sql.SetConnectionString("dotacsgo");
+
+            var oracle = new OracleConnection();
+            oracle.SetConnectionString("valomlbb");
+
+            var dbsql = new DbCommand(oracle, "Run the program");
+            dbsql.Execute();
         }
     }
 }
