@@ -18,11 +18,7 @@ namespace CSharpIntermediate
         
         static void Main()
         {
-            Text text = new Text();
-            Shape shape = text; // upcasting
 
-            Text newText = (Text)shape; // downcasting
-            
         }
     }
 }
