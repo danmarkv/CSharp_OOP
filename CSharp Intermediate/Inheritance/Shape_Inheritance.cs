@@ -1,6 +1,6 @@
 ﻿namespace CSharpIntermediate.Inheritance
 {
-    public class Shape
+    public class Shape_Inheritance
     {
         public int Width { get; set; }
         public int Height { get; set; }
