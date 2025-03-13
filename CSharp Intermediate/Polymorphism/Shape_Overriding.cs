@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpIntermediate.Polymorphism
 {
-    class Shape
+    class Shape_Overriding
     {
         public int Width { get; set; }
         public int Height { get; set; }
@@ -17,7 +17,7 @@ namespace CSharpIntermediate.Polymorphism
         }
     }
 
-    class Circle : Shape
+    class Circle : Shape_Overriding
     {
         public override void Draw()
         {
@@ -25,7 +25,7 @@ namespace CSharpIntermediate.Polymorphism
         }
     }
 
-    class Rectangle : Shape
+    class Rectangle : Shape_Overriding
     {
         public override void Draw()
         {
@@ -33,7 +33,7 @@ namespace CSharpIntermediate.Polymorphism
         }
     }
 
-    class Triangle : Shape
+    class Triangle : Shape_Overriding
     {
         public override void Draw()
         {
@@ -44,7 +44,7 @@ namespace CSharpIntermediate.Polymorphism
 
     class ShapeCreation
     {
-        public void DrawShape(List<Shape> shapes)
+        public void DrawShape(List<Shape_Overriding> shapes)
         {
             foreach (var shape in shapes)
                 shape.Draw();
