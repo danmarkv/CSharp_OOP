@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpIntermediate.Associate_Between_Classes.Composition
 {
-    class Logger
+    class Logger_Composition
     {
         public void Log(string message)
         {

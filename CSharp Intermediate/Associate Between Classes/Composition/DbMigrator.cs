@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CSharpIntermediate.Associate_Between_Classes.Composition
 {
-    class DbMigrator
+    class DbMigrator_Composition
     {
-        private readonly Logger _logger;
+        private readonly Logger_Composition _logger;
 
-        public DbMigrator(Logger logger)
+        public DbMigrator_Composition(Logger_Composition logger)
         {
             _logger = logger;
         }

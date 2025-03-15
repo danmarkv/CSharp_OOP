@@ -8,9 +8,9 @@ namespace CSharpIntermediate.Associate_Between_Classes.Composition
 {
     class Installer
     {
-        private readonly Logger _logger;
+        private readonly Logger_Composition _logger;
 
-        public Installer(Logger logger)
+        public Installer(Logger_Composition logger)
         {
             _logger = logger;
         }

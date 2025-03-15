@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections;
 using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
@@ -9,6 +10,7 @@ using CSharpIntermediate.Associate_Between_Classes.Composition;
 using CSharpIntermediate.Classes;
 using CSharpIntermediate.Classes_Exercises;
 using CSharpIntermediate.Inheritance;
+using CSharpIntermediate.Interfaces;
 using CSharpIntermediate.Polymorphism;
 using CSharpIntermediate.Polymorphism.Exercises;
 
@@ -20,14 +22,8 @@ namespace CSharpIntermediate
 
         static void Main()
         {
-            var sql = new SqlConnection();
-            sql.SetConnectionString("dotacsgo");
-
-            var oracle = new OracleConnection();
-            oracle.SetConnectionString("valomlbb");
-
-            var dbsql = new DbCommand(oracle, "Run the program");
-            dbsql.Execute();
+            var dbMigrator = new DbMigrator(new FileLogger("C:\\Games\\log.txt"));
+            dbMigrator.Migrate();
         }
     }
 }
