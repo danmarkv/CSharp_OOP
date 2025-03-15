@@ -17,13 +17,13 @@ using CSharpIntermediate.Polymorphism.Exercises;
 
 namespace CSharpIntermediate
 {
+    
     class Program
     {
 
         static void Main()
         {
-            var dbMigrator = new DbMigrator(new FileLogger("C:\\Games\\log.txt"));
-            dbMigrator.Migrate();
+            
         }
     }
 }
