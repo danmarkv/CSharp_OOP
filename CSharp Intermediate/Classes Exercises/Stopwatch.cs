@@ -19,7 +19,7 @@ namespace CSharpIntermediate.Classes_Exercises
         public void Start()
         {
             if (_state)
-                throw new("Stopwatch is already running");
+                throw new InvalidOperationException("Stopwatch is already running");
 
             _state = true;
             _startTime = DateTime.Now;
@@ -28,7 +28,7 @@ namespace CSharpIntermediate.Classes_Exercises
         public void Stop()
         {
             if (!_state)
-                throw new("Stopwatch hasn't started yet");
+                throw new InvalidOperationException("Stopwatch hasn't started yet");
 
             _state = false;
             _stopTime = DateTime.Now;

@@ -24,10 +24,13 @@ namespace CSharpIntermediate
 
         static void Main()
         {
-            var activities = new WorkFlowEngine();
-            activities.CurrentActivity(new NotifyOwner());
-            activities.CurrentActivity(new UploadToCloudStorage());
-            activities.Run();
+            var workflow = new Workflow();
+            workflow.Add(new UploadToCloudStorage());
+            workflow.Add(new NotifyOwner());
+
+            var workflowEngine = new WorkFlowEngine();
+            workflowEngine.Run(workflow);
+
         }
     }
 }

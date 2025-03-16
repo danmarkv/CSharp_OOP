@@ -11,6 +11,38 @@ namespace CSharpIntermediate.Interfaces.Exercise
     {
         void Execute();
     }
+    
+    public interface IWorkflow
+    {
+        void Add(IActivity activity);
+        void Remove(IActivity activity);
+        IEnumerable<IActivity> GetActivity();
+    }
+
+    public class Workflow : IWorkflow
+    {
+        private readonly List<IActivity> _activities;
+
+        public Workflow()
+        {
+            _activities = new List<IActivity>();
+        }
+
+        public void Add(IActivity activity)
+        {
+            _activities.Add(activity);
+        }
+
+        public void Remove(IActivity activity)
+        {
+            _activities.Remove(activity);
+        }
+
+        public IEnumerable<IActivity> GetActivity()
+        {
+            return _activities;
+        }
+    }
 
     public class UploadToCloudStorage : IActivity
     {
@@ -37,21 +69,11 @@ namespace CSharpIntermediate.Interfaces.Exercise
     }
     public class WorkFlowEngine
     {
-        private readonly List<IActivity> _activities;
-
-        public WorkFlowEngine()
+        
+        public void Run(IWorkflow workflow)
         {
-            _activities = new List<IActivity>();
-        }
-
-        public void CurrentActivity(IActivity activity)
-        {
-            _activities.Add(activity);
-        }
-        public void Run()
-        {
-            foreach (var act in _activities)
-                act.Execute();
+            foreach (var activity in workflow.GetActivity())
+                activity.Execute();
         }
     }
 }
