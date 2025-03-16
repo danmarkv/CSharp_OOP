@@ -13,6 +13,7 @@ using CSharpIntermediate.Inheritance;
 using CSharpIntermediate.Interfaces;
 using CSharpIntermediate.Polymorphism;
 using CSharpIntermediate.Polymorphism.Exercises;
+using CSharpIntermediate.Interfaces.Exercise;
 
 
 namespace CSharpIntermediate
@@ -23,6 +24,10 @@ namespace CSharpIntermediate
 
         static void Main()
         {
+            var activities = new WorkFlowEngine();
+            activities.CurrentActivity(new NotifyOwner());
+            activities.CurrentActivity(new UploadToCloudStorage());
+            activities.Run();
         }
     }
 }
