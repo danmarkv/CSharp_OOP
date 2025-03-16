@@ -23,7 +23,6 @@ namespace CSharpIntermediate
 
         static void Main()
         {
-            
         }
     }
 }
