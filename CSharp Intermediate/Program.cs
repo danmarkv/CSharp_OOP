@@ -14,6 +14,7 @@ using CSharpIntermediate.Interfaces;
 using CSharpIntermediate.Polymorphism;
 using CSharpIntermediate.Polymorphism.Exercises;
 using CSharpIntermediate.Interfaces.Exercise;
+using CSharpIntermediate.Delegates;
 
 
 namespace CSharpIntermediate
@@ -24,13 +25,24 @@ namespace CSharpIntermediate
 
         static void Main()
         {
-            var workflow = new Workflow();
-            workflow.Add(new UploadToCloudStorage());
-            workflow.Add(new NotifyOwner());
+            //var processor = new PhotoProcessor();
 
-            var workflowEngine = new WorkFlowEngine();
-            workflowEngine.Run(workflow);
+            //processor.Process("photo.jpg");
+            //var program = new Program(); // if RemoveRedEye isn't static
+            var processor = new PhotoProcessor();
+            var filters = new PhotoFilters();
 
+            PhotoProcessor.PhotoFilterHandler filterHandler = filters.ApplyBrightness; // call a method of photo filter, so create an instance of photo filters
+            filterHandler += filters.ApplyContrast;
+            //filterHandler += program.RemoveRedEye; // if RemoveRedEye isn't static
+            filterHandler += RemoveRedEye;
+
+            processor.Process("photo.jpg", filterHandler);
+        }
+
+        static void RemoveRedEye(Photo photo)
+        {
+            Console.WriteLine("Apply Remove RedEye effect...");
         }
     }
 }
