@@ -25,16 +25,12 @@ namespace CSharpIntermediate
 
         static void Main()
         {
-            //var processor = new PhotoProcessor();
-
-            //processor.Process("photo.jpg");
-            //var program = new Program(); // if RemoveRedEye isn't static
             var processor = new PhotoProcessor();
             var filters = new PhotoFilters();
 
-            PhotoProcessor.PhotoFilterHandler filterHandler = filters.ApplyBrightness; // call a method of photo filter, so create an instance of photo filters
+            //PhotoProcessor.PhotoFilterHandler filterHandler = filters.ApplyBrightness; // call a method of photo filter, so create an instance of photo filters
+            Action<Photo> filterHandler = filters.ApplyBrightness;
             filterHandler += filters.ApplyContrast;
-            //filterHandler += program.RemoveRedEye; // if RemoveRedEye isn't static
             filterHandler += RemoveRedEye;
 
             processor.Process("photo.jpg", filterHandler);

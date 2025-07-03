@@ -8,19 +8,17 @@ namespace CSharpIntermediate.Delegates
 {
     public class PhotoProcessor
     {
-        public delegate void PhotoFilterHandler(Photo photo);
+        //public void Process(string path, PhotoFilterHandler filterHandler)
 
-        //public void Process(string path) //instead of this, pass a delegate
-        public void Process(string path, PhotoFilterHandler filterHandler)
+        public void Process(string path, Action<Photo> filterHandler)
+
         {
+            // System.Action<> // points to a method that returns void
+            // System.Func<> // points to a method that returns a value
+
             var photo = Photo.Load(path);
 
             filterHandler(photo);
-
-            //var filters = new PhotoFilters();
-            //filters.ApplyBrightness(photo);
-            //filters.ApplyContrast(photo);
-            //filters.ApplyResize(photo); //instead of this, pass a delegate
 
             photo.Save();
         }
