@@ -25,20 +25,29 @@ namespace CSharpIntermediate
 
         static void Main()
         {
-            var processor = new PhotoProcessor();
-            var filters = new PhotoFilters();
+            // the syntax is: args => expression
+            // number => number * number;
 
-            //PhotoProcessor.PhotoFilterHandler filterHandler = filters.ApplyBrightness; // call a method of photo filter, so create an instance of photo filters
-            Action<Photo> filterHandler = filters.ApplyBrightness;
-            filterHandler += filters.ApplyContrast;
-            filterHandler += RemoveRedEye;
+            Func<int, int> square = number => number * number;
 
-            processor.Process("photo.jpg", filterHandler);
+            //Console.WriteLine(square(6));
+
+            // if no args: () => expression
+            // if 1 args: x => expression
+            // if 2 or more: (x, y, z) => expression
+
+            const int factor = 5;
+
+            Func<int, int> multiply = n => n * factor;
+
+            //Console.WriteLine(multiply(10));
+
+            /* ---------- */
         }
 
-        static void RemoveRedEye(Photo photo)
+        static int Square(int number)
         {
-            Console.WriteLine("Apply Remove RedEye effect...");
+            return number * number;
         }
     }
 }
