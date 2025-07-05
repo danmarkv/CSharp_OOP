@@ -15,6 +15,7 @@ using CSharpIntermediate.Polymorphism;
 using CSharpIntermediate.Polymorphism.Exercises;
 using CSharpIntermediate.Interfaces.Exercise;
 using CSharpIntermediate.Delegates;
+using CSharpIntermediate.Lambda_Expression;
 
 
 namespace CSharpIntermediate
@@ -43,11 +44,25 @@ namespace CSharpIntermediate
             //Console.WriteLine(multiply(10));
 
             /* ---------- */
+
+            // BookRepository
+
+            var books = new BookRepository().GetBooks();
+            //var cheapBooks = books.FindAll(IsCheaperThan10Dollars); // instead of this and the IsCheaperThan10Dollars method, use this:
+            var cheapBooks = books.FindAll(b => b.Price < 10);
+
+            foreach (var book in cheapBooks)
+                Console.WriteLine(book.Title);
         }
 
-        static int Square(int number)
+        static bool IsCheaperThan10Dollars(Book book)
         {
-            return number * number;
+            return book.Price < 10;
         }
+
+        //static int Square(int number)
+        //{
+        //    return number * number;
+        //}
     }
 }
