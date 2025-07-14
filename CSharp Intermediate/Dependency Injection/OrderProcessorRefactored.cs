@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpIntermediate.Classes
+namespace CSharpIntermediate.Dependency_Injection
 {
-    public class Order
+    internal class OrderProcessorRefactored
     {
-        public string CustomerEmail { get; internal set; }
     }
 }
